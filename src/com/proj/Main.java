@@ -6,24 +6,29 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) throws IOException {
-
-		String commands = "java -cp aiml/lib/Ab.jar Main bot=test action=chat trace=false";
+		String cmd = "cmd";
+		String cd = "cd .\\bot\\";
+		String commands = "java -cp lib/Ab.jar Main bot=test action=chat trace=false";
 		Runtime rt = Runtime.getRuntime();
-		Process proc = rt.exec(commands);
+		Process proc = rt.exec(cmd);
 		PrintWriter stdin = new PrintWriter(proc.getOutputStream());
 		InputStream stdout = proc.getInputStream();
 		InputStream stderr = proc.getErrorStream();
-		
+		Scanner a = new Scanner(System.in);
 		//wpisz do bota
 		String komenda = "HELLO ALICE";
-		//stdin.println(komenda);
+		stdin.println(cd);
 		stdin.flush();
-		
-		stdin.close();
+		stdin.println(commands);
+		stdin.flush();
+		stdin.println(komenda);
+		stdin.println("test");
+		stdin.flush();
 		
 		String line;
 	    BufferedReader brCleanUp = new BufferedReader (new InputStreamReader (stdout));
@@ -39,6 +44,7 @@ public class Main {
 	        //System.out.println ("[Stderr] " + line);
 	      }
 	      brCleanUp.close();
+	      stdin.close();
 	      proc.destroy();
 	      rt.exit(0);
 		

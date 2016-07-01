@@ -27,27 +27,29 @@ public class Main {
 		stdin.println(commands);
 		stdin.flush();
 		stdin.println(komenda);
-		stdin.println("test");
 		stdin.flush();
-		
-		String line;
+		int x = 1;
+		String line = "1";
 	    BufferedReader brCleanUp = new BufferedReader (new InputStreamReader (stdout));
-	    while ((line = brCleanUp.readLine ()) != null) {
-	    System.out.println ("[Stdout] " + line);
+	    while(x < 37)
+	    {
+	    	line = brCleanUp.readLine();	
+	    	System.out.println (x+ "[Stdout] " + line);
+	    	x++;
 	    }
-	    brCleanUp.close();
-		
-	      // clean up if any output in stderr
-	      brCleanUp =
-	        new BufferedReader (new InputStreamReader (stderr));
-	      while ((line = brCleanUp.readLine ()) != null) {
-	        //System.out.println ("[Stderr] " + line);
-	      }
-	      brCleanUp.close();
-	      stdin.close();
-	      proc.destroy();
-	      rt.exit(0);
-		
+		for (int i=0; i< 5; i++)
+		{
+		stdin.println(a.nextLine());
+		stdin.flush();
+    	line = brCleanUp.readLine();	
+    	System.out.println ("[Stdout] " + line);
+		}
+	    
+		System.out.println("KONIEC");
+		stdin.close();
+		brCleanUp.close();
+	    proc.destroy();
+	    rt.exit(0);
 	}
 
 }

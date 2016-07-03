@@ -46,10 +46,12 @@ public class Main
 		    	chatWindow.setConsole(console.substring(0, 6)+" "+chatWindow.getAnswer()+"\n"+console.substring(7));
 		    	chatWindow.setAnswer("");
 			}
-			try {
+			try 
+			{
 				Thread.sleep(100);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
+			}
+			catch (InterruptedException e) 
+			{
 				e.printStackTrace();
 			}
 		}

@@ -27,8 +27,8 @@ public class Main
 		BufferedReader brCleanUp = new BufferedReader (new InputStreamReader (stdout));
 		ChatWindow chatWindow = new ChatWindow();
 		
-		int x = 1;
-	    while(x < 38)
+		int x = 0;
+	    while(x < 37)
 	    {
 	    	brCleanUp.readLine();
 	    	x++;
